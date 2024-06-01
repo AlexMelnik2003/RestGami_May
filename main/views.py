@@ -6,21 +6,11 @@ from .models import Task
 from .serializers import TaskSerializer
 
 
-class TaskAPIView(generics.ListAPIView):
+class TaskListCreateAPIView(generics.ListCreateAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
 
 
-class CreateAPIView(generics.CreateAPIView):
-    queryset = Task.objects.all()
-    serializer_class = TaskSerializer
-
-
-class UpdateAPIView(generics.UpdateAPIView):
-    queryset = Task.objects.all()
-    serializer_class = TaskSerializer
-
-
-class DestroyAPIView(generics.DestroyAPIView):
+class TaskRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
